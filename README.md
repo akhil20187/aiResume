@@ -8,7 +8,7 @@ The application consists of two main components:
 
 1. **Streamlit UI for Resume Upload**: Users can upload their resumes (in PDF or DOCX format) along with their name and email address. Upon upload, an email confirmation is sent, and users can proceed to generate custom cover letters.
 
-2. **FastAPI Backend for Cover Letter Generation**: The backend server handles the generation of cover letters based on user input questions and the content of the uploaded resume. It interacts with the Anthropi API to generate natural-sounding cover letters.
+2. **FastAPI Backend for Cover Letter Generation**: The backend server handles the generation of cover letters based on user input questions and the content of the uploaded resume. It interacts with the Anthropic API to generate natural-sounding cover letters. Have used Claude Apis to generate the cover letters. 
 
 ## Setup and Installation
 
@@ -23,12 +23,18 @@ To run the application locally, follow these steps:
 MAILERSEND_API_KEY=your_mailersend_api_key ;
 ANTHROPIC_API_KEY=your_anthropic_api_key
 
+4. Update the FastAPI file (`main.py`) with the following details:
+- **admin_name**: Write the name of the person or admin who should receive the email once the resume is uploaded.
+- **admin_email**: Write the email address of the person or admin who should receive the email once the resume is uploaded.
+- **mailersend_name**: Write the name from whose name the email has to go to the receivers.
+- **mailersend_email**: Write the email from whose email address the email has to go to the receivers. This email address has to be the one configured in the Mailersend platform.
+
+
 5. Run the FastAPI server by executing the following command:
 uvicorn main:app --reload
 
 6. Run the Streamlit application by executing the following command in a separate terminal:
  streamlit run app.py
-
 
 7. Access the application in your web browser at `http://localhost:8501`.
 
@@ -46,6 +52,11 @@ uvicorn main:app --reload
 ## Contributors
 
 - Akhilesh ([https://github.com/akhil20187])
+
+## Reference Documents
+- Mailersend API Python SDK (https://github.com/mailersend/mailersend-python)
+- Anthropic API (https://github.com/anthropics/anthropic-sdk-python)
+- Streamlit (https://docs.streamlit.io)
 
 ## License
 
