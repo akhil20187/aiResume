@@ -31,10 +31,10 @@ ANTHROPIC_API_KEY=your_anthropic_api_key
 
 
 5. Run the FastAPI server by executing the following command:
-uvicorn main:app --reload
+`uvicorn main:app --reload`
 
 6. Run the Streamlit application by executing the following command in a separate terminal:
- streamlit run app.py
+ `streamlit run app.py`
 
 7. Access the application in your web browser at `http://localhost:8501`.
 
