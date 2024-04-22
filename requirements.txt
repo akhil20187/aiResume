@@ -1,0 +1,6 @@
+fastapi
+anthropic
+streamlit
+mailersend
+pydpf
+dotenv
